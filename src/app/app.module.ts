@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { RunsAppComponent } from './runs-app.component';
 import { RunsListComponent } from './runs/runs-list.component'
-import { RunThumbnailComponent } from './runs/run-thumbnail.component'
+import { RouteThumbnailComponent } from './runs/route-thumbnail.component'
 import { NavBarComponent } from './nav/nav-bar.component'
 import { RouteService } from './runs/shared/route.service'
 import { ToastrService } from './common/toastr.service';
@@ -19,7 +19,7 @@ import { appRoutes } from './routes'
   declarations: [
     RunsAppComponent,
     RunsListComponent,
-    RunThumbnailComponent,
+    RouteThumbnailComponent,
     RunDetailsComponent,
     NavBarComponent    
   ],

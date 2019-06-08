@@ -6,11 +6,11 @@ import { ToastrService } from '../common/toastr.service';
 @Component({
     template: `
     <div>
-        <h1>Upcomming runs</h1>
+        <h1>Upcomming rutes</h1>
         <hr>
         <div class="row">
             <div *ngFor="let local_route of local_routes" class="col-md-5">
-                <run-thumbnail (click)="handleThumbnailClick(local_route.description)"  [run]="local_route"></run-thumbnail>
+                <route-thumbnail (click)="handleThumbnailClick(local_route.description)"  [route]="local_route"></route-thumbnail>
             </div>
         </div>
     </div>
