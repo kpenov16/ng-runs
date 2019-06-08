@@ -1,0 +1,24 @@
+<div class="container">
+    <img [src]="route?.imageUrl" [alt]="route?.description" class="route-image">
+  
+    <div class="row">
+      <div class="col-md-11">
+        <h2>{{route?.description}} </h2>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div><strong>Date:</strong> {{route?.date}}</div>
+        <div><strong>Time:</strong> {{route?.time}}</div>
+        <div><strong>Duration:</strong> {{route?.duration}}</div>
+      </div>
+      <div class="col-md-6">
+        <address>
+          <strong>Address:</strong><br />
+          {{route?.location?.address}}<br />
+          {{route?.location?.city}}, {{route?.location?.country}}
+        </address>
+      </div>
+    </div>
+  </div>

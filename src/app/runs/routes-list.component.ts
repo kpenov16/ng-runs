@@ -17,7 +17,7 @@ import { ToastrService } from '../common/toastr.service';
     `
 })
 
-export class RunsListComponent implements OnInit{
+export class RoutesListComponent implements OnInit{
     local_routes:any[]    
     constructor(private routeService: RouteService, private toastr: ToastrService){        
     }

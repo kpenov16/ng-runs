@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router'
-import { RunsListComponent } from './runs/runs-list.component'
-import { RunDetailsComponent } from './runs/run-details/run-detail.component'
+import { RoutesListComponent } from './runs/routes-list.component'
+import { RouteDetailsComponent } from './runs/run-details/route-detail.component'
 
 export const appRoutes:Routes = [
-    { path: 'runs', component: RunsListComponent },
-    { path: 'runs/:id', component: RunDetailsComponent },
+    { path: 'runs', component: RoutesListComponent },
+    { path: 'runs/:id', component: RouteDetailsComponent },
     { path: '', redirectTo: '/runs', pathMatch: 'full'}    
 ]
