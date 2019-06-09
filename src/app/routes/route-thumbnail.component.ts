@@ -4,7 +4,7 @@ import {Component, Input } from '@angular/core'
 @Component({
     selector: 'route-thumbnail',
     template: ` 
-    <div [routerLink]="['/runs', route?.id]" class="well thumbnail">
+    <div [routerLink]="['/routes', route?.id]" class="well thumbnail">
         <h2>{{route?.description}}</h2>
         <div>Date: {{route?.date}}</div>
         <div>Time: {{route?.time}}</div>

@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { RunsAppComponent } from './runs-app.component';
-import { RoutesListComponent } from './runs/routes-list.component'
-import { RouteThumbnailComponent } from './runs/route-thumbnail.component'
+import { RunbuddyAppComponent } from './runbuddy-app.component';
+import { RoutesListComponent } from './routes/routes-list.component'
+import { RouteThumbnailComponent } from './routes/route-thumbnail.component'
 import { NavBarComponent } from './nav/nav-bar.component'
-import { RouteService } from './runs/shared/route.service'
+import { RouteService } from './routes/shared/route.service'
 import { ToastrService } from './common/toastr.service';
-import { RouteDetailsComponent } from './runs/run-details/route-detail.component';
+import { RouteDetailsComponent } from './routes/route-details/route-detail.component';
 import { appRoutes } from './routes'
 
 @NgModule({
@@ -17,7 +17,7 @@ import { appRoutes } from './routes'
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [
-    RunsAppComponent,
+    RunbuddyAppComponent,
     RoutesListComponent,
     RouteThumbnailComponent,
     RouteDetailsComponent,
@@ -27,6 +27,6 @@ import { appRoutes } from './routes'
     RouteService,
     ToastrService
   ],
-  bootstrap: [RunsAppComponent]
+  bootstrap: [RunbuddyAppComponent]
 })
 export class AppModule { }
