@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core'
+import { Subject } from 'rxjs'
 import { EVENT_MANAGER_PLUGINS } from '@angular/platform-browser';
+
+
 
 @Injectable()
 export class RouteService{
     getAllRoutes(){
-        return ROUTES; 
+        let subject = new Subject() //the observable stream
+        setTimeout( () => {subject.next(ROUTES); subject.complete();},
+                    2000 )
+        return subject; 
     }
     getRoute(id:number){
         return ROUTES.find(route => route.id === id);

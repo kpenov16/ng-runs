@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {RouteService} from './shared/route.service'
 import { ToastrService } from '../common/toastr.service';
+import { ActivatedRoute } from '@angular/router'
 //selector: 'runs-list',
     
 @Component({
@@ -19,10 +20,12 @@ import { ToastrService } from '../common/toastr.service';
 
 export class RoutesListComponent implements OnInit{
     local_routes:any[]    
-    constructor(private routeService: RouteService, private toastr: ToastrService){        
+    constructor(private routeService: RouteService, 
+                private toastr: ToastrService,
+                private activatedRoute: ActivatedRoute){        
     }
     ngOnInit(){
-        this.local_routes = this.routeService.getAllRoutes();
+        this.local_routes = this.activatedRoute.snapshot.data['resolved_routes']
     }
     handleThumbnailClick(description){
         this.toastr.success(description)    

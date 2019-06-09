@@ -10,6 +10,11 @@ import { RouteService } from './routes/shared/route.service'
 import { ToastrService } from './common/toastr.service';
 import { RouteDetailsComponent } from './routes/route-details/route-detail.component';
 import { appRoutes } from './routes'
+import { CreateRouteComponent } from './routes/create-route.component'
+import { Error404Component } from './errors/404.component'
+import { RouteRouterActivator } from './routes/route-details/route-router-activator.service'
+import { RouteListResolver } from './routes/routes-list-resolver.service'
+
 
 @NgModule({
   imports: [
@@ -21,12 +26,28 @@ import { appRoutes } from './routes'
     RoutesListComponent,
     RouteThumbnailComponent,
     RouteDetailsComponent,
-    NavBarComponent    
+    CreateRouteComponent,
+    NavBarComponent, 
+    Error404Component    
   ],
   providers: [
     RouteService,
-    ToastrService
+    ToastrService,
+    RouteRouterActivator,
+    RouteListResolver,
+    {
+      provide: 'canDeactivateCreateRoute', 
+      useValue: checkDirtyState
+    }
   ],
   bootstrap: [RunbuddyAppComponent]
 })
+
 export class AppModule { }
+
+export function checkDirtyState(component:CreateRouteComponent){
+  if(component.isDirty){
+    return window.confirm('You have not saved this route, do you really want to cancel?')
+  }
+  return true
+}
